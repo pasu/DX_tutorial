@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.24)
+project(DxLearning LANGUAGES NONE)
+
+# Enable CXX only when an actual backend exists. The initial scaffold has no targets.
+foreach(backend IN ITEMS 01-d3d11 02-d3d12)
+    if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/practice/${backend}/CMakeLists.txt")
+        if(NOT WIN32)
+            message(FATAL_ERROR "Direct3D practice targets require Windows.")
+        endif()
+        enable_language(CXX)
+        set(CMAKE_CXX_STANDARD 20)
+        set(CMAKE_CXX_STANDARD_REQUIRED ON)
+        set(CMAKE_CXX_EXTENSIONS OFF)
+        add_subdirectory("practice/${backend}")
+    endif()
+endforeach()

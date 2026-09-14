@@ -67,3 +67,33 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# Learning workspace additions
+/build/
+/out/
+/work/
+**/build/
+.vs/
+.idea/
+*.user
+*.suo
+CMakeUserPresets.json
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.dll
+*.lib
+*.cso
+*.dxil
+*.wpix
+*.rdc
+*.etl
+*.dmp
+*.log
+.env
+.env.*
+!.env.example
+__pycache__/
+.DS_Store
+Thumbs.db
